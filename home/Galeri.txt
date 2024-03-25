@@ -1,0 +1,50 @@
++ istediğim şey bir galeri web sitesi oluşturmak bu sitede en başta bir başlık,  hamburger  menü ve sayfayı tam kaplamayacak şekilde
+   bir fotograf slaytı istiyorum aşağıya devam ettiğimde diğer görsel içerikler gelecek  menuye  tıkladıgımda galeri diye bir sekme açılacak bu sekmeye tıklandığında dergi görünümünde bir javascript gelmiş olacak sayfaları değiştirdiğimde          resimler gelecek  aynı zamanda responsive ozelliğine  sahip olacak
+
+
+
++ turn.js yi nasıl koduma ekleyeceğim?
+
++ var numberOfPages = 6; // Toplam sayfa sayısı
+
+   // Sayfa resimlerinin yollarını bir dizi olarak tanımlayın
+    var pageImages = ['1.jpeg','2.jpeg', '4.jpeg', '3.jpeg', '5.jpeg', '6.jpeg'];
+
+  // Kitaba ihtiyaç duyulan sayfaları ekler
+      function addPage(page, book) {
+  // Önce sayfanın kitapta olup olmadığını kontrol edin
+       if (!book.turn('hasPage', page)) {
+    // Bu sayfa için bir element oluşturun
+       var element = $('<div />', {
+      'class': 'page ' + ((page % 2 == 0) ? 'odd' : 'even'),
+      'id': 'page-' + page
+    }).html('<i class="loader"></i>');
+    // Eğer yoksa sayfayı ekleyin
+    book.turn('addPage', element, page);
+    // Verilerin sunucudan geldiğini ve isteğin 1 saniye sürdüğünü varsayalım.
+    setTimeout(function() {
+      // Sayfa numarasına göre arka plan resmini ayarlayın
+      element.html('<div class="data" style="background-image: url(\'' + pageImages[page - 1] + '\');">' + page + '</div>');
+    }, 1000); // 1 saniye bekletme süresi
+  }
+
+}  kod çalıştığında var pageImages = ['1.jpeg','2.jpeg', '4.jpeg', '3.jpeg', '5.jpeg', '6.jpeg'];    galeriye sığmıyor   ve fotografların tamamı gözükmüyor bu resimlerin tamamının görünmesini istiyorum.
+
+
+
+ + Galeri html sayfama turn.js kütüphanesinin CSS,HTML ve  JS kodlarını ekleyerek bir galeri oluştur bu galerinin her bir sayfasına farklı fotoğraflar ekleyeceğim   sayfa açıldığında bu galerinin tam ortada olmasını istiyorum
+
+
+   + mavi göyüzünde uçan balıklar çizer misin ? 
+
+  +kız kulesini van gogh tarzında çiz
+  + düşmüş  meleğin yeniden cennete alındığını davinci tarzında çizer misin? 
+  +denizin üstündeki deniz  kabuğundan çıkan   uzun turuncu saçlı beyaz tenli bir kadını leoardo davinci tarzında çizer misin ? 
+  +full metal alchemist broterhood animesini davinci tarzında çizer misin;
+
+
+ tamamı copilottan yapıldı.
+
+kapak fotoğrafı midjourney botundan.
+
+  
